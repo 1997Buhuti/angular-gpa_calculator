@@ -1,11 +1,12 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatTable, MatTableDataSource} from "@angular/material/table";
 import GPA_CAL from '../Util/GPA_CAL';
+import {Output, EventEmitter} from '@angular/core';
 
 export interface gpa_detail {
   course: string;
   grade: string;
-  credits:number;
+  credits: number;
   gpa: number;
 }
 
@@ -18,18 +19,22 @@ export interface gpa_detail {
   styleUrls: ['gpa-table.component.scss'],
 })
 export class GpaTableComponent implements OnInit {
+  @Output() newItemEvent = new EventEmitter<boolean>();
+  finalGPA:number;
+  isBtnClicked:boolean=false;
+
   GPA_DATA: gpa_detail[] = [
-    {course: "Introduction to Programing", grade: "A", credits:3 , gpa: 12.00},
-    {course: "Object Oriented Programing", grade: "A-", credits:2, gpa: 7.4},
-    {course: "Data Structures And Algorithms", credits:4, grade: "B+", gpa: 13.2},
+    {course: "Introduction to Programing", grade: "A", credits: 3, gpa: 12.00},
+    {course: "Object Oriented Programing", grade: "A-", credits: 2, gpa: 7.4},
+    {course: "Data Structures And Algorithms", credits: 4, grade: "B+", gpa: 13.2},
   ];
   text: string | undefined;
 
-  columnsToDisplay: string[] = ["course", "grade", "credits","gpa"];
+  columnsToDisplay: string[] = ["course", "grade", "credits", "gpa"];
   dataSource = this.GPA_DATA;
   isFormVisible: boolean = false;
 
-  public newRow = {course: "programing", grade: "A", credits:3, gpa: 12.00};
+  public newRow = {course: "programing", grade: "A", credits: 3, gpa: 12.00};
   public myDataArray: any;
 
   constructor() {
@@ -46,47 +51,31 @@ export class GpaTableComponent implements OnInit {
   @ViewChild(MatTable) table: MatTable<any>;
 
   addSubjectDetail() {
-    console.log(this.newRow.course, this.newRow.grade, this.newRow.gpa)
+    this.isBtnClicked=false;
     if (this.newRow.course != "" && this.newRow.grade != "") {
       //const gpa = this.calculateGPA(this.newRow.grade);
-      const gpa = GPA_CAL.calculateGPA(this.newRow.grade,this.newRow.credits);
-      this.newRow.gpa=gpa;
+      const gpa = GPA_CAL.calculateGPA(this.newRow.grade, this.newRow.credits);
+      this.newRow.gpa = gpa;
       const newDetailArray: gpa_detail[] = this.GPA_DATA;
       newDetailArray.push(this.newRow);
       this.myDataArray = [...newDetailArray];
-      this.newRow = {course: "programing", grade: "A", credits:3, gpa: gpa};
+      this.newRow = {course: "programing", grade: "A", credits: 3, gpa: gpa};
     } else {
       console.log('Error adding info')
     }
   }
 
-  calculateGPA(grade) {
-
-    switch (grade) {
-      case "A":
-        return 4.00;
-      case "A-":
-        return 3.7;
-      case"B+":
-        return 3.3;
-      case"B":
-        return 3.0;
-      case"B-":
-        return 2.7;
-      case"C+":
-        return 2.3;
-      case"C":
-        return 2.0;
-    }
-
-    return 0;
-  }
-
-  calculateFinalGPA(grade){
-
+  onclickCalculate() {
+    this.finalGPA=GPA_CAL.calculateFinalGPA(this.myDataArray);
+    this.isBtnClicked=!this.isBtnClicked;
+    console.log(this.finalGPA);
   }
 
   setCurrentStyles() {
     return this.isFormVisible ? '#FF008E' : '#24A19C'
+  }
+
+  changeStatus(val:boolean){
+    this.newItemEvent.emit(val)
   }
 }

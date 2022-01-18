@@ -22,6 +22,7 @@ import {FooterComponent} from './components/footer/footer.component';
 import {MatIconModule} from "@angular/material/icon";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
+import { GpaDisplayComponent } from './components/gpa-display/gpa-display.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import {MatListModule} from "@angular/material/list";
     WelcomeImageComponent,
     GpaTableComponent,
     FooterComponent,
+    GpaDisplayComponent,
   ],
   imports: [
     BrowserModule,
