@@ -25,6 +25,12 @@ export default class GPA_CAL{
   }
 
   static calculateFinalGPA(detailArray: gpa_detail[]) {
-
+    let totalGPA;
+    let totalCredits;
+    for(let i=0;i<detailArray.length;i++) {
+      totalGPA+=detailArray[i].gpa;
+      totalCredits+=detailArray[i].credits
+    }
+    return parseFloat((totalGPA/totalCredits).toString()).toFixed(2)
   }
 }
