@@ -1,7 +1,7 @@
 <div class="row">
       <div class="col"></div>
       <div class="col-8">
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <table mat-table [dataSource]="myDataArray" class="mat-elevation-z8">
 
           <!--- Note that these columns can be defined in any order.
                 The actual rendered columns are set as a property on the row definition" -->
@@ -33,16 +33,18 @@
 
 <div class="row mt-5">
   <div class="col-12  d-flex justify-content-center add-course-container">
-    <button mat-raised-button color="primary">Add Course Detail</button>
+    <button mat-raised-button [ngStyle]="{color: 'white',backgroundColor:setCurrentStyles()} " (click)="onAddCourseClicked()">
+      {{isFormVisible? "Hide Course Detail":"Add Course Detail"}}
+    </button>
   </div>
-  <div class="col mt-5 gpa-form-container">
+  <div *ngIf="isFormVisible" class="col mt-5 gpa-form-container">
     <div class="row">
       <div class="col-12 d-flex justify-content-center">
         <div class="row ">
           <div class="col-12 d-flex justify-content-center">
-            <mat-form-field class="gpa-form"apparence="legacy">
+            <mat-form-field class="gpa-form" apparence="legacy">
               <mat-label>Subject Name</mat-label>
-              <input style="color: black;" matInput [(ngModel)]="newRow.subject" type="text" name="newuserName" id="newuserName" class="form-control" required>
+              <input style="color: black;" matInput [(ngModel)]="newRow.course" type="text" name="course" id="course" class="form-control" required>
             </mat-form-field>
           </div>
           <div class="col-12 d-flex justify-content-center">
@@ -56,7 +58,7 @@
       <div class="row">
         <div class="col-3"></div>
         <div class="col-3 px-5 float-right btn-container">
-          <button class="btn-submit" style="float:right" mat-raised-button color="primary">submit</button>
+          <button class="btn-submit" (click)="addSubjectDetail()" style="float:right" mat-raised-button color="primary">submit</button>
         </div>
         <div class="col-3 mx-0 px-5">
           <button mat-raised-button color="accent">Calculate</button>

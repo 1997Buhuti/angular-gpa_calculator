@@ -8,7 +8,7 @@ import { HeaderComponentComponent } from './components/header-component/header-c
 import { WelcomeImageComponent } from './components/welcome-image/welcome-image.component';
 import { GpaTableComponent } from './components/gpa-table/gpa-table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 
 import { MatTableModule } from '@angular/material/table'
 import { MatInputModule } from '@angular/material/input';
@@ -30,11 +30,11 @@ import {MatListModule} from "@angular/material/list";
     HeaderComponentComponent,
     WelcomeImageComponent,
     GpaTableComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
-    FormsModule,
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     DataTablesModule,
     BrowserAnimationsModule,
