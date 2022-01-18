@@ -28,6 +28,8 @@ export class GpaTableComponent implements OnInit {
   columnsToDisplay: string[] = ["course", "grade", "credits","gpa"];
   dataSource = this.GPA_DATA;
   isFormVisible: boolean = false;
+  isGPAVisible: boolean = false;
+  finalGPA:string;
 
   public newRow = {course: "programing", grade: "A", credits:3, gpa: 12.00};
   public myDataArray: any;
@@ -46,7 +48,7 @@ export class GpaTableComponent implements OnInit {
   @ViewChild(MatTable) table: MatTable<any>;
 
   addSubjectDetail() {
-    console.log(this.newRow.course, this.newRow.grade, this.newRow.gpa)
+    this.isGPAVisible=false;
     if (this.newRow.course != "" && this.newRow.grade != "") {
       //const gpa = this.calculateGPA(this.newRow.grade);
       const gpa = GPA_CAL.calculateGPA(this.newRow.grade,this.newRow.credits);
@@ -60,30 +62,10 @@ export class GpaTableComponent implements OnInit {
     }
   }
 
-  calculateGPA(grade) {
-
-    switch (grade) {
-      case "A":
-        return 4.00;
-      case "A-":
-        return 3.7;
-      case"B+":
-        return 3.3;
-      case"B":
-        return 3.0;
-      case"B-":
-        return 2.7;
-      case"C+":
-        return 2.3;
-      case"C":
-        return 2.0;
-    }
-
-    return 0;
-  }
-
-  calculateFinalGPA(grade){
-
+  isCalculateFinalGPAClicked(){
+    this.finalGPA = GPA_CAL.calculateFinalGPA(this.myDataArray);
+    console.log(this.finalGPA);
+    this.isGPAVisible=!this.isGPAVisible;
   }
 
   setCurrentStyles() {

@@ -74,9 +74,14 @@
           </button>
         </div>
         <div class="col-3 mx-0 px-5">
-          <button mat-raised-button color="accent">Calculate</button>
+          <button mat-raised-button color="accent" (click)="isCalculateFinalGPAClicked()">Calculate</button>
         </div>
         <div class="col-3"></div>
+      </div>
+      <div *ngIf="isGPAVisible" class="row mt-5">
+        <div class="col text-center">
+          <h2>Your GPA is {{finalGPA}}</h2>
+        </div>
       </div>
     </div>
   </div>
