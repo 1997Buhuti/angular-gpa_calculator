@@ -5,6 +5,7 @@ import GPA_CAL from '../Util/GPA_CAL';
 export interface gpa_detail {
   course: string;
   grade: string;
+  credits:number;
   gpa: number;
 }
 
@@ -18,17 +19,17 @@ export interface gpa_detail {
 })
 export class GpaTableComponent implements OnInit {
   GPA_DATA: gpa_detail[] = [
-    {course: "Introduction to Programing", grade: "A", gpa: 4.00},
-    {course: "Object Oriented Programing", grade: "A-", gpa: 4.00},
-    {course: "Data Structures And Algorithms", grade: "B+", gpa: 3.30},
+    {course: "Introduction to Programing", grade: "A", credits:3 , gpa: 12.00},
+    {course: "Object Oriented Programing", grade: "A-", credits:2, gpa: 7.4},
+    {course: "Data Structures And Algorithms", credits:4, grade: "B+", gpa: 13.2},
   ];
   text: string | undefined;
 
-  columnsToDisplay: string[] = ["course", "grade", "gpa"];
+  columnsToDisplay: string[] = ["course", "grade", "credits","gpa"];
   dataSource = this.GPA_DATA;
   isFormVisible: boolean = false;
 
-  public newRow = {course: "programing", grade: "A", gpa: 4.00};
+  public newRow = {course: "programing", grade: "A", credits:3, gpa: 12.00};
   public myDataArray: any;
 
   constructor() {
@@ -48,12 +49,12 @@ export class GpaTableComponent implements OnInit {
     console.log(this.newRow.course, this.newRow.grade, this.newRow.gpa)
     if (this.newRow.course != "" && this.newRow.grade != "") {
       //const gpa = this.calculateGPA(this.newRow.grade);
-      const gpa = GPA_CAL.calculateGPA(this.newRow.grade);
+      const gpa = GPA_CAL.calculateGPA(this.newRow.grade,this.newRow.credits);
       this.newRow.gpa=gpa;
       const newDetailArray: gpa_detail[] = this.GPA_DATA;
       newDetailArray.push(this.newRow);
       this.myDataArray = [...newDetailArray];
-      this.newRow = {course: "programing", grade: "A", gpa: gpa};
+      this.newRow = {course: "programing", grade: "A", credits:3, gpa: gpa};
     } else {
       console.log('Error adding info')
     }
