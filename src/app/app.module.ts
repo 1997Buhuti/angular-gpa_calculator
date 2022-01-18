@@ -18,6 +18,10 @@ import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
+import { FooterComponent } from './components/footer/footer.component';
+import {MatIconModule} from "@angular/material/icon";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatListModule} from "@angular/material/list";
 
 
 @NgModule({
@@ -25,7 +29,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     AppComponent,
     HeaderComponentComponent,
     WelcomeImageComponent,
-    GpaTableComponent
+    GpaTableComponent,
+    FooterComponent
   ],
   imports: [
     FormsModule,
@@ -41,6 +46,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatToolbarModule,
     MatButtonModule,
     MatDialogModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule,
 
   ],
   providers: [],

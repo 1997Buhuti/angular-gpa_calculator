@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {MatTableDataSource} from "@angular/material/table";
 
 export interface gpa_detail {
   course: string;
@@ -24,7 +23,11 @@ export class GpaTableComponent implements OnInit {
 
   columnsToDisplay: string[] = ["course", "grade","gpa"];
   dataSource = GPA_DATA;
+
+  public newRow = {subject: "Introduction to Programing", grade: "A" ,gpa:4.00};
+  public myDataArray: any;
   constructor() {
+    //this.myDataArray = new MatTableDataSource<gpa_detail>([...this.GPA_DATA]);
   }
 
 
