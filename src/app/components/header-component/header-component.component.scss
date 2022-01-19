@@ -1,12 +1,27 @@
 
 .header-container{
-  text-align: center;
-  color: #063b9b;
+  color: #ffffff;
   h1{
     font-weight:bold;
     font-size:2em;
   }
-
+  .navbar{
+    background-color: #0B0251;
+    a{
+      color: white;
+    }
+    .link-container{
+      .link-container-signIn{
+        text-align: right;
+      }
+      .link-container-signUp{
+      }
+    }
+    .container{
+      width: 100%;
+      margin:5px;
+    }
+  }
 }
 .image-container{
   margin: 0;
