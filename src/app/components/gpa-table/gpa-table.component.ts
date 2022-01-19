@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatTable, MatTableDataSource} from "@angular/material/table";
-import GPA_CAL from '../Util/GPA_CAL';
+import GpaCal from '../util/GpaCal';
 
 export interface gpa_detail {
   course: string;
@@ -51,7 +51,7 @@ export class GpaTableComponent implements OnInit {
     this.isGPAVisible=false;
     if (this.newRow.course != "" && this.newRow.grade != "") {
       //const gpa = this.calculateGPA(this.newRow.grade);
-      const gpa = GPA_CAL.calculateGPA(this.newRow.grade,this.newRow.credits);
+      const gpa = GpaCal.calculateGPA(this.newRow.grade,this.newRow.credits);
       this.newRow.gpa=gpa;
       const newDetailArray: gpa_detail[] = this.GPA_DATA;
       newDetailArray.push(this.newRow);
@@ -63,7 +63,7 @@ export class GpaTableComponent implements OnInit {
   }
 
   isCalculateFinalGPAClicked(){
-    this.finalGPA = GPA_CAL.calculateFinalGPA(this.myDataArray);
+    this.finalGPA = GpaCal.calculateFinalGPA(this.myDataArray);
     console.log(this.finalGPA);
     this.isGPAVisible=!this.isGPAVisible;
   }

@@ -1,6 +1,6 @@
 import {gpa_detail} from "../gpa-table/gpa-table.component";
 
-export default class GPA_CAL{
+export default class GpaCal {
 
   static calculateGPA(grade:string,credits:number) {
 
