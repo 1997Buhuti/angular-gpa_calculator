@@ -39,33 +39,49 @@
   </div>
   <div *ngIf="isFormVisible" class="col mt-5 gpa-form-container">
     <div class="row">
-      <div class="col-3"></div>
-      <div class="col-6">
-        <form>
-          <div class="mb-3">
-            <label for="Subject Name" class="form-label">Subject Name</label>
-            <input type="text" class="form-control" id="Subject Name" aria-describedby="Subject Name">
+      <div class="col-12 d-flex justify-content-center">
+        <div class="row ">
+          <div class="col-12 d-flex justify-content-center">
+            <mat-form-field class="gpa-form" apparence="legacy">
+              <mat-label class="lbl-gpa-form">Subject Name</mat-label>
+              <input style="color: black;" matInput [(ngModel)]="newRow.course" type="text" name="course" id="course"
+                     class="form-control" required>
+            </mat-form-field>
           </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+          <div class="col-12 d-flex justify-content-center">
+            <mat-form-field class="gpa-form" apparence="legacy">
+              <mat-label class="lbl-gpa-form">Grade</mat-label>
+              <input style="color: black;" matInput [(ngModel)]="newRow.grade" type="text" name="grade" id="grade"
+                     class="form-control" required>
+            </mat-form-field>
+            <br>
           </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          <div class="col-12 d-flex justify-content-center">
+            <mat-form-field class="gpa-form" apparence="legacy">
+              <mat-label class="lbl-gpa-form">Credits</mat-label>
+              <input style="color: black;" matInput [(ngModel)]="newRow.credits" type="text" name="credits" id="credits"
+                     class="form-control" required>
+            </mat-form-field>
+            <br>
           </div>
-          <div class="col-12">
-            <div class="row mx-0">
-              <div class="col-6 text-center">
-                <button type="submit" class="btn btn-outline-primary">Submit</button>
-              </div>
-              <div class="col-6 text-center">
-                <button type="submit" class="btn btn-outline-success">Calculate</button>
-              </div>
-            </div>
-          </div>
-
-        </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-3 px-5 float-right btn-container">
+          <button class="btn-submit" (click)="addSubjectDetail()" style="float:right" mat-raised-button color="primary">
+            submit
+          </button>
+        </div>
+        <div class="col-3 mx-0 px-5">
+          <button mat-raised-button color="accent" (click)="isCalculateFinalGPAClicked()">Calculate</button>
+        </div>
+        <div class="col-3"></div>
+      </div>
+    </div>
+    <div *ngIf="isGPAVisible" class="row mt-4">
+      <div class="col-12 text-center">
+        <h2> Your GPA is {{finalGPA}} </h2>
       </div>
     </div>
   </div>

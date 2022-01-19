@@ -6,8 +6,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /* Style for the GPA details table */
 .gpa-table{
   th{
-    font-size:1.5em;
+    font-size:1.3em;
     font-weight:bold;
     color: #2e0232;
+  }
+}
+@media (max-width: 576px) {
+  .gpa-table {
+    th {
+      font-size: 0.8em;
+      color: red;
+    }
+    td{
+      font-size:0.8em;
+    }
   }
 }
