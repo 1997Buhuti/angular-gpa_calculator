@@ -1,6 +1,10 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild, Output, EventEmitter} from '@angular/core';
 import {MatTable} from "@angular/material/table";
 import GpaCal from "../util/GpaCal";
+import IDGenerator from "../util/IDGenerator";
+import {Gpa_Detail} from '../../IGpa_Detail';
+import {Sample_Course_Details} from "../../Sample_Course_Details";
+import {CourseDetailService} from "../../services/courseDetail.service";
 
 @Component({
   selector: 'app-gpa-form',
@@ -9,18 +13,22 @@ import GpaCal from "../util/GpaCal";
 })
 export class GpaFormComponent implements OnInit {
 
+  @Output() onAddCourseDetail: EventEmitter<Gpa_Detail> = new EventEmitter<Gpa_Detail>();
   isFormVisible: boolean = false;
   isGPAVisible: boolean = false;
-  finalGPA:string;
+  finalGPA: string;
   text: string | undefined;
   //dataSource = this.GPA_DATA;
 
-  public newRow = {course: "programing", grade: "A", credits:3, gpa: 12.00};
+  public newRow = {course: "programing", grade: "A", credits: 3, gpa: 12.00 ,id:"1008"};
   public myDataArray: any;
-  constructor() { }
+
+  constructor(private courseDetailService: CourseDetailService) {
+  }
 
   ngOnInit(): void {
   }
+
   onAddCourseClicked() {
     this.isFormVisible = !this.isFormVisible;
   }
@@ -28,24 +36,27 @@ export class GpaFormComponent implements OnInit {
   @ViewChild(MatTable) table: MatTable<any>;
 
   addSubjectDetail() {
-    this.isGPAVisible=false;
+    this.isGPAVisible = false;
     if (this.newRow.course != "" && this.newRow.grade != "") {
-      //const gpa = this.calculateGPA(this.newRow.grade);
-      const gpa = GpaCal.calculateGPA(this.newRow.grade,this.newRow.credits);
-      this.newRow.gpa=gpa;
-      //const newDetailArray: Gpa_Detail[] = this.GPA_DATA;
-      //newDetailArray.push(this.newRow);
-      //this.myDataArray = [...newDetailArray];
-      this.newRow = {course: "programing", grade: "A", credits:3, gpa: gpa};
+      const gpa = GpaCal.calculateGPA(this.newRow.grade, this.newRow.credits);
+      let id= IDGenerator.generateId();
+      this.newRow.gpa = gpa;
+      this.newRow.id = id;
+      const newDetailArray: Gpa_Detail[] = Sample_Course_Details;
+      this.courseDetailService.addCourseDetail(this.newRow).subscribe((courseDetail: Gpa_Detail) => newDetailArray.push(courseDetail));
+      this.myDataArray = [...newDetailArray];
+      this.newRow = {course: "programing", grade: "A", credits: 3, gpa: gpa, id:id};
     } else {
       console.log('Error adding info')
+      alert('All the mandatory fields must be filled');
     }
+    console.log(this.myDataArray);
   }
 
-  isCalculateFinalGPAClicked(){
+  isCalculateFinalGPAClicked() {
     this.finalGPA = GpaCal.calculateFinalGPA(this.myDataArray);
     console.log(this.finalGPA);
-    this.isGPAVisible=!this.isGPAVisible;
+    this.isGPAVisible = !this.isGPAVisible;
   }
 
   setCurrentStyles() {
