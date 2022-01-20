@@ -4,7 +4,7 @@
       <app-header-component></app-header-component>
     </div>
     <div class="gpa-table-container col-12">
-      <app-gpa-table></app-gpa-table>
+      <app-gpa-table [updatedData]="updatedCourseDetails"></app-gpa-table>
     </div>
     <div class="col-12">
       <app-gpa-form (onAddCourseDetail)="receiveCourseDetails($event)"></app-gpa-form>

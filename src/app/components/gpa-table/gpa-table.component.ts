@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {Gpa_Detail} from '../../IGpa_Detail';
 import {CourseDetailService} from '../../services/courseDetail.service';
 import {ShareUpdatedCoursesService} from "../../services/share-updated-courses.service";
@@ -9,7 +9,9 @@ import {MatTableDataSource} from "@angular/material/table";
   templateUrl: './gpa-table.component.html',
   styleUrls: ['gpa-table.component.scss'],
 })
-export class GpaTableComponent implements OnInit {
+export class GpaTableComponent implements OnInit ,OnChanges {
+
+  @Input () updatedData:Gpa_Detail[];
   courseDetails:any;
   public myDataArray:Gpa_Detail[] = this.shareUpdatedCoursesService.getUpdatedCourseDetails();
   columnsToDisplay: string[] = ["course", "grade", "credits","gpa"];
@@ -22,6 +24,10 @@ export class GpaTableComponent implements OnInit {
   ngOnInit(): void {
     this.courseDetailsService.getAllCourseDetails().subscribe((courseDetails)=>(
     this.courseDetails = courseDetails));
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
   }
 
 
