@@ -1,4 +1,4 @@
-import {gpa_detail} from "../gpa-table/gpa-table.component";
+import {Gpa_Detail} from "../../IGpa_Detail";
 
 export default class GpaCal {
 
@@ -24,7 +24,7 @@ export default class GpaCal {
     return 0;
   }
 
-  static calculateFinalGPA(detailArray: gpa_detail[]) {
+  static calculateFinalGPA(detailArray: Gpa_Detail[]) {
     let totalGPA=0;
     let totalCredits=0;
     for(let i=0;i<detailArray.length;i++) {

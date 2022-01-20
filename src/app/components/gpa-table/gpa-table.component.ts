@@ -1,10 +1,9 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
+import {Observable} from 'rxjs';
 import {MatTable, MatTableDataSource} from "@angular/material/table";
 import GpaCal from '../util/GpaCal';
-
-/**
- * @title Basic use of `<table mat-table>`
- */
+import {Gpa_Detail} from '../../IGpa_Detail';
+import {CourseDetailService} from '../../services/courseDetail.service'
 @Component({
   selector: 'app-gpa-table',
   templateUrl: './gpa-table.component.html',
@@ -26,12 +25,15 @@ export class GpaTableComponent implements OnInit {
   //
   // public newRow = {course: "programing", grade: "A", credits:3, gpa: 12.00};
   // public myDataArray: any;
-
-  constructor() {
+  courseDetails:Gpa_Detail[]=[];
+  columnsToDisplay: string[] = ["course", "grade", "credits","gpa"];
+  constructor(private courseDetailsService:CourseDetailService ) {
     //this.myDataArray = new MatTableDataSource<gpa_detail>([...this.GPA_DATA]);
   }
 
   ngOnInit(): void {
+    this.courseDetailsService.getAllCourseDetails().subscribe((courseDetails)=>(
+    this.courseDetails = courseDetails));
   }
 
 

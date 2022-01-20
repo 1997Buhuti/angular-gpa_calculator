@@ -1,7 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatTable} from "@angular/material/table";
 import GpaCal from "../util/GpaCal";
-import {Gpa_Detail} from '../../IGpa_Detial'
 
 @Component({
   selector: 'app-gpa-form',
@@ -14,7 +13,6 @@ export class GpaFormComponent implements OnInit {
   isGPAVisible: boolean = false;
   finalGPA:string;
   text: string | undefined;
-  columnsToDisplay: string[] = ["course", "grade", "credits","gpa"];
   //dataSource = this.GPA_DATA;
 
   public newRow = {course: "programing", grade: "A", credits:3, gpa: 12.00};
