@@ -5,6 +5,8 @@ import IDGenerator from "../util/IDGenerator";
 import {Gpa_Detail} from '../../IGpa_Detail';
 import {Sample_Course_Details} from "../../Sample_Course_Details";
 import {CourseDetailService} from "../../services/courseDetail.service";
+import {ShareUpdatedCoursesService} from "../../services/share-updated-courses.service";
+
 
 @Component({
   selector: 'app-gpa-form',
@@ -20,11 +22,13 @@ export class GpaFormComponent implements OnInit {
   text: string | undefined;
   //dataSource = this.GPA_DATA;
 
-  public newRow = {course: "programing", grade: "A", credits: 3, gpa: 12.00 ,id:"1008"};
+  public newRow = {course: "programing", grade: "A", credits: 3, gpa: 12.00, id: "1008"};
   public myDataArray: any;
 
-  constructor(private courseDetailService: CourseDetailService) {
-  }
+  constructor(
+    private courseDetailService: CourseDetailService,
+    private shareUpdatedCoursesService:ShareUpdatedCoursesService
+    ){}
 
   ngOnInit(): void {
   }
@@ -39,18 +43,19 @@ export class GpaFormComponent implements OnInit {
     this.isGPAVisible = false;
     if (this.newRow.course != "" && this.newRow.grade != "") {
       const gpa = GpaCal.calculateGPA(this.newRow.grade, this.newRow.credits);
-      let id= IDGenerator.generateId();
+      let id = IDGenerator.generateId();
       this.newRow.gpa = gpa;
       this.newRow.id = id;
       const newDetailArray: Gpa_Detail[] = Sample_Course_Details;
       this.courseDetailService.addCourseDetail(this.newRow).subscribe((courseDetail: Gpa_Detail) => newDetailArray.push(courseDetail));
       this.myDataArray = [...newDetailArray];
-      this.newRow = {course: "programing", grade: "A", credits: 3, gpa: gpa, id:id};
+      this.newRow = {course: "programing", grade: "A", credits: 3, gpa: gpa, id: id};
+      //this.shareUpdatedCoursesService.setUpdatedCourseDetails(this.myDataArray);
+      this.onAddCourseDetail.emit(this.myDataArray);
     } else {
       console.log('Error adding info')
       alert('All the mandatory fields must be filled');
     }
-    console.log(this.myDataArray);
   }
 
   isCalculateFinalGPAClicked() {

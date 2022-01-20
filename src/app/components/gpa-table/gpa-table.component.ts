@@ -1,35 +1,23 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {Observable} from 'rxjs';
-import {MatTable, MatTableDataSource} from "@angular/material/table";
-import GpaCal from '../util/GpaCal';
 import {Gpa_Detail} from '../../IGpa_Detail';
-import {CourseDetailService} from '../../services/courseDetail.service'
+import {CourseDetailService} from '../../services/courseDetail.service';
+import {ShareUpdatedCoursesService} from "../../services/share-updated-courses.service";
+import {MatTableDataSource} from "@angular/material/table";
+
 @Component({
   selector: 'app-gpa-table',
   templateUrl: './gpa-table.component.html',
   styleUrls: ['gpa-table.component.scss'],
 })
 export class GpaTableComponent implements OnInit {
-  // GPA_DATA: gpa_detail[] = [
-  //   {course: "Introduction to Programing", grade: "A", credits:3 , gpa: 12.00},
-  //   {course: "Object Oriented Programing", grade: "A-", credits:2, gpa: 7.4},
-  //   {course: "Data Structures And Algorithms", credits:4, grade: "B+", gpa: 13.2},
-  // ];
-  // text: string | undefined;
-  //
-  // columnsToDisplay: string[] = ["course", "grade", "credits","gpa"];
-  // dataSource = this.GPA_DATA;
-  // isFormVisible: boolean = false;
-  // isGPAVisible: boolean = false;
-  // finalGPA:string;
-  //
-  // public newRow = {course: "programing", grade: "A", credits:3, gpa: 12.00};
-  // public myDataArray: any;
-  courseDetails:Gpa_Detail[]=[];
+  courseDetails:any;
+  public myDataArray:Gpa_Detail[] = this.shareUpdatedCoursesService.getUpdatedCourseDetails();
   columnsToDisplay: string[] = ["course", "grade", "credits","gpa"];
-  constructor(private courseDetailsService:CourseDetailService ) {
-    //this.myDataArray = new MatTableDataSource<gpa_detail>([...this.GPA_DATA]);
+
+  constructor(private courseDetailsService:CourseDetailService ,private shareUpdatedCoursesService:ShareUpdatedCoursesService ) {
+    //this.courseDetails = new MatTableDataSource<Gpa_Detail>([...this.courseDetails]);
   }
+
 
   ngOnInit(): void {
     this.courseDetailsService.getAllCourseDetails().subscribe((courseDetails)=>(

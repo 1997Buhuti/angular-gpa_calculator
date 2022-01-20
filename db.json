@@ -48,6 +48,34 @@
       "credits": 3,
       "gpa": 12,
       "id": "kymp95k3"
+    },
+    {
+      "course": "programing",
+      "grade": "A",
+      "credits": 3,
+      "gpa": 12,
+      "id": "kymtfmls"
+    },
+    {
+      "course": "programing",
+      "grade": "A",
+      "credits": 3,
+      "gpa": 12,
+      "id": "kymtfndk"
+    },
+    {
+      "course": "programing in C",
+      "grade": "A",
+      "credits": 3,
+      "gpa": 12,
+      "id": "kymtgbg2"
+    },
+    {
+      "course": "programing C#",
+      "grade": "A",
+      "credits": 3,
+      "gpa": 12,
+      "id": "kymtghls"
     }
   ]
 }
