@@ -22,7 +22,8 @@ import {FooterComponent} from './components/footer/footer.component';
 import {MatIconModule} from "@angular/material/icon";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
-
+import { GpaFormComponent } from './components/gpa-form/gpa-form.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {MatListModule} from "@angular/material/list";
     WelcomeImageComponent,
     GpaTableComponent,
     FooterComponent,
+    GpaFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +51,7 @@ import {MatListModule} from "@angular/material/list";
     MatIconModule,
     MatSidenavModule,
     MatListModule,
+    HttpClientModule
 
   ],
   providers: [],
