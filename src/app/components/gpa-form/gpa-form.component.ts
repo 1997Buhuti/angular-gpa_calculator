@@ -3,7 +3,6 @@ import {MatTable} from "@angular/material/table";
 import GpaCal from "../util/GpaCal";
 import IDGenerator from "../util/IDGenerator";
 import {Gpa_Detail} from '../../IGpa_Detail';
-import {Sample_Course_Details} from "../../Sample_Course_Details";
 import {CourseDetailService} from "../../services/courseDetail.service";
 import {ShareUpdatedCoursesService} from "../../services/share-updated-courses.service";
 
@@ -38,7 +37,7 @@ export class GpaFormComponent implements OnInit {
   }
 
   @ViewChild(MatTable) table: MatTable<any>;
-
+  newDetailArray: Gpa_Detail[] = [];
   addSubjectDetail() {
     this.isGPAVisible = false;
     if (this.newRow.course != "" && this.newRow.grade != "") {
@@ -46,10 +45,11 @@ export class GpaFormComponent implements OnInit {
       let id = IDGenerator.generateId();
       this.newRow.gpa = gpa;
       this.newRow.id = id;
-      const newDetailArray: Gpa_Detail[] = Sample_Course_Details;
+      //const newDetailArray: Gpa_Detail[] = Sample_Course_Details;
+
       //this.courseDetailService.addCourseDetail(this.newRow).subscribe((courseDetail: Gpa_Detail) => newDetailArray.push(courseDetail));
-      newDetailArray.push(this.newRow);
-      this.myDataArray = [...newDetailArray];
+      this.newDetailArray.push(this.newRow);
+      this.myDataArray = [...this.newDetailArray];
       this.newRow = {course: "programing", grade: "A", credits: 3, gpa: gpa, id: id};
       //this.shareUpdatedCoursesService.setUpdatedCourseDetails(this.myDataArray);
       this.onAddCourseDetail.emit(this.myDataArray);
