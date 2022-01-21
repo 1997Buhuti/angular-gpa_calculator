@@ -9,7 +9,7 @@ import {MatTableDataSource} from "@angular/material/table";
   templateUrl: './gpa-table.component.html',
   styleUrls: ['gpa-table.component.scss'],
 })
-export class GpaTableComponent implements OnInit ,OnChanges {
+export class GpaTableComponent implements OnInit ,OnChanges{
 
   @Input () updatedData:Gpa_Detail[];
   courseDetails:any;
@@ -22,11 +22,14 @@ export class GpaTableComponent implements OnInit ,OnChanges {
 
 
   ngOnInit(): void {
-    this.courseDetailsService.getAllCourseDetails().subscribe((courseDetails)=>(
-    this.courseDetails = courseDetails));
+    /*this.courseDetailsService.getAllCourseDetails().subscribe((courseDetails)=>(
+    this.courseDetails = courseDetails));*/
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    /*this.courseDetailsService.getAllCourseDetails().subscribe((courseDetails)=>(
+      this.courseDetails = courseDetails));*/
+    this.courseDetails = new MatTableDataSource<Gpa_Detail>([...this.updatedData]);
     console.log(changes);
   }
 

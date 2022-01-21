@@ -26,280 +26,49 @@
       "grade": "A",
       "credits": 3,
       "gpa": 12,
-      "id": "kymp8wnr"
+      "id": "kynuniny"
+    },
+    {
+      "course": "programing5",
+      "grade": "A",
+      "credits": 3,
+      "gpa": 12,
+      "id": "kynurly6"
     },
     {
       "course": "programing",
       "grade": "A",
       "credits": 3,
       "gpa": 12,
-      "id": "kymp93gk"
+      "id": "kynurtti"
     },
     {
       "course": "programing",
       "grade": "A",
       "credits": 3,
       "gpa": 12,
-      "id": "kymp9543"
+      "id": "kynurufy"
     },
     {
       "course": "programing",
       "grade": "A",
       "credits": 3,
       "gpa": 12,
-      "id": "kymp95k3"
+      "id": "kynurw8d"
     },
     {
       "course": "programing",
       "grade": "A",
       "credits": 3,
       "gpa": 12,
-      "id": "kymtfmls"
+      "id": "kynurwri"
     },
     {
       "course": "programing",
       "grade": "A",
       "credits": 3,
       "gpa": 12,
-      "id": "kymtfndk"
-    },
-    {
-      "course": "programing in C",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymtgbg2"
-    },
-    {
-      "course": "programing C#",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymtghls"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymv4awd"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymv4ced"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymv4d3b"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymv4ebz"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymv4ld1"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymv4m2d"
-    },
-    {
-      "course": "SQL",
-      "grade": "B-",
-      "credits": "4",
-      "gpa": 10.8,
-      "id": "kymv4zyt"
-    },
-    {
-      "course": "SQL",
-      "grade": "B+",
-      "credits": "4",
-      "gpa": 13.2,
-      "id": "kymv5db2"
-    },
-    {
-      "course": "Python",
-      "grade": "B+",
-      "credits": "2",
-      "gpa": 6.6,
-      "id": "kymv5tra"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymv654d"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymv68gd"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymv69px"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymv6b1h"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymv752m"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymv765x"
-    },
-    {
-      "course": "Python",
-      "grade": "B+",
-      "credits": "6",
-      "gpa": 19.799999999999997,
-      "id": "kymv84xy"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymv86di"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymv8j5i"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymv8kol"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymv8ol9"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymv8s26"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymvnoow"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymvnq71"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymvnqwk"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymvnrtp"
-    },
-    {
-      "course": "programing545",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymvowwt"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymvpdhp"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": "5",
-      "gpa": 20,
-      "id": "kymvqudi"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymvqydh"
-    },
-    {
-      "course": "programing",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymw3jm5"
-    },
-    {
-      "course": "programing 529",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymw3q2d"
-    },
-    {
-      "course": "programing900",
-      "grade": "A",
-      "credits": 3,
-      "gpa": 12,
-      "id": "kymw4l97"
+      "id": "kynus05p"
     }
   ]
 }

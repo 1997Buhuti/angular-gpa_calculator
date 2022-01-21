@@ -47,7 +47,8 @@ export class GpaFormComponent implements OnInit {
       this.newRow.gpa = gpa;
       this.newRow.id = id;
       const newDetailArray: Gpa_Detail[] = Sample_Course_Details;
-      this.courseDetailService.addCourseDetail(this.newRow).subscribe((courseDetail: Gpa_Detail) => newDetailArray.push(courseDetail));
+      //this.courseDetailService.addCourseDetail(this.newRow).subscribe((courseDetail: Gpa_Detail) => newDetailArray.push(courseDetail));
+      newDetailArray.push(this.newRow);
       this.myDataArray = [...newDetailArray];
       this.newRow = {course: "programing", grade: "A", credits: 3, gpa: gpa, id: id};
       //this.shareUpdatedCoursesService.setUpdatedCourseDetails(this.myDataArray);
