@@ -1,6 +1,5 @@
 <div class="row">
-  <div class="col"></div>
-  <div class="col-8">
+  <div class="col-md-8  offset-md-2 xs-12 ">
     <table mat-table [dataSource]="courseDetails" class=" gpa-table mat-elevation-z8">
 
       <ng-container matColumnDef="course">
@@ -27,7 +26,6 @@
       <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
     </table>
   </div>
-  <div class="col"></div>
 </div>
 
 
