@@ -1,19 +1,27 @@
 import { Injectable } from '@angular/core';
-import {Gpa_Detail} from "../IGpa_Detail";
+import { Gpa_Detail } from '../IGpa_Detail';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ShareUpdatedCoursesService {
-  updatedCourseDetails:Gpa_Detail[];
+  updatedCourseDetails: Gpa_Detail[];
+  finalGPA: number;
+  constructor() {}
 
-  constructor() { }
-
-  setUpdatedCourseDetails(data:Gpa_Detail[]){
-    this.updatedCourseDetails=data;
+  setUpdatedCourseDetails(data: Gpa_Detail[]) {
+    this.updatedCourseDetails = data;
   }
 
-  getUpdatedCourseDetails(){
+  getUpdatedCourseDetails() {
     return this.updatedCourseDetails;
+  }
+
+  setFinalGpa(finalGPA: number) {
+    this.finalGPA = finalGPA;
+  }
+
+  getFinalGpa() {
+    return this.finalGPA;
   }
 }

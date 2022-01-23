@@ -24,6 +24,7 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
 import { GpaFormComponent } from './components/gpa-form/gpa-form.component';
 import {HttpClientModule} from '@angular/common/http';
+import { FinalGpaViewerComponent } from './components/final-gpa-viewer/final-gpa-viewer.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {HttpClientModule} from '@angular/common/http';
     GpaTableComponent,
     FooterComponent,
     GpaFormComponent,
+    FinalGpaViewerComponent,
   ],
   imports: [
     BrowserModule,
