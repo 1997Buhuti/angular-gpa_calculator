@@ -27,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FinalGpaViewerComponent } from './components/final-gpa-viewer/final-gpa-viewer.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { HomeComponent } from './components/pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     GpaFormComponent,
     FinalGpaViewerComponent,
     routingComponents,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
