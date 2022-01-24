@@ -21,6 +21,7 @@
   color: azure;
   justify-content: space-between;
   background-color: #0b0251;
+
   .nav-row {
     width: 100%;
     .heading {
@@ -29,6 +30,11 @@
 
     .navigational-links {
       text-align: right;
+      cursor: pointer;
+      a {
+        text-decoration: none;
+        color: azure;
+      }
     }
   }
 
