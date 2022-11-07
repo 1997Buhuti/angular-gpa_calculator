@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-gpa_calculator';
+  updatedCourseDetails;
+  receiveCourseDetails($event){
+    this.updatedCourseDetails = $event;
+  }
 }

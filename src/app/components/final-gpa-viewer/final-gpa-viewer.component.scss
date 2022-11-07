@@ -1,0 +1,16 @@
+.gpaviewerimg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.GPA {
+  color: red;
+}
+
+@media (max-width: 576px) {
+  .gpaviewerimg {
+    width: 100%;
+    height: 100%;
+  }
+}
