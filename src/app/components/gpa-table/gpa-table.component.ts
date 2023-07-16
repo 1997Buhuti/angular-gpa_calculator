@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatTable, MatTableDataSource} from "@angular/material/table";
+import {MatLegacyTable as MatTable, MatLegacyTableDataSource as MatTableDataSource} from "@angular/material/legacy-table";
 import GPA_CAL from '../Util/GPA_CAL';
 import {Output, EventEmitter} from '@angular/core';
 
