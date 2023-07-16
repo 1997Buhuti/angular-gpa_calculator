@@ -10,18 +10,18 @@ import {GpaTableComponent} from './components/gpa-table/gpa-table.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 
-import {MatTableModule} from '@angular/material/table'
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select';
-import {MatCardModule} from '@angular/material/card';
+import {MatLegacyTableModule as MatTableModule} from '@angular/material/legacy-table'
+import {MatLegacyInputModule as MatInputModule} from '@angular/material/legacy-input';
+import {MatLegacyFormFieldModule as MatFormFieldModule} from '@angular/material/legacy-form-field';
+import {MatLegacySelectModule as MatSelectModule} from '@angular/material/legacy-select';
+import {MatLegacyCardModule as MatCardModule} from '@angular/material/legacy-card';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
-import {MatDialogModule} from '@angular/material/dialog';
+import {MatLegacyButtonModule as MatButtonModule} from '@angular/material/legacy-button';
+import {MatLegacyDialogModule as MatDialogModule} from '@angular/material/legacy-dialog';
 import {FooterComponent} from './components/footer/footer.component';
 import {MatIconModule} from "@angular/material/icon";
 import {MatSidenavModule} from "@angular/material/sidenav";
-import {MatListModule} from "@angular/material/list";
+import {MatLegacyListModule as MatListModule} from "@angular/material/legacy-list";
 import { GpaDisplayComponent } from './components/gpa-display/gpa-display.component';
 
 
