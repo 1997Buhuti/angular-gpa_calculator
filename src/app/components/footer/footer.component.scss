@@ -1,18 +1,24 @@
-.footer-column{
-  margin-top:2em;
-  padding-top:1em;
-  text-align: center;
-  min-height: 100px;
-  background-color: #551d9b;
-  h3{
-    color:white;
-  }
-  h4{
-    color:white;
-  }
+.footer-container{
+  left: 0;
+  bottom: 0;
+  .footer-column{
 
+    margin-top:2em;
+    padding-top:1em;
+    text-align: center;
+    min-height: 100px;
+    background-color: #0b0251;
+    h3{
+      color:white;
+    }
+    h4{
+      color:white;
+    }
+
+  }
+  .footer-column-dark{
+    min-height: 30px;
+    background-color: #0b0b85;
+  }
 }
-.footer-column-dark{
-  min-height: 30px;
-  background-color: #380960;
-}
+

@@ -1,15 +1,18 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-12">
+    <div class="header-container col-12">
       <app-header-component></app-header-component>
     </div>
-    <div class="col-12">
-      <app-gpa-table></app-gpa-table>
+    <div class="gpa-table-container col-12">
+      <app-gpa-table [updatedData]="updatedCourseDetails"></app-gpa-table>
     </div>
     <div class="col-12">
+      <app-gpa-form
+        (onAddCourseDetail)="receiveCourseDetails($event)"
+      ></app-gpa-form>
     </div>
     <div class="col-12">
-     <app-footer></app-footer>
+      <app-footer></app-footer>
     </div>
   </div>
 </div>
